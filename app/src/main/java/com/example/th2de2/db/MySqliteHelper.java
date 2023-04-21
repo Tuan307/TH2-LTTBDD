@@ -72,7 +72,7 @@ public class MySqliteHelper extends SQLiteOpenHelper {
     public List<Book> getAllBook() {
         List<Book> bookList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM dbs1 ", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM dbs1", null);
 //        Cursor cursor = sqLiteDatabase.query("dbs", null, null,
 //                null, null, null, null);
         while (cursor != null && cursor.moveToNext()) {
@@ -86,6 +86,14 @@ public class MySqliteHelper extends SQLiteOpenHelper {
             bookList.add(book);
         }
         return bookList;
+    }
+
+    public Cursor getBooksWithMaxPriceByAuthor() {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] columns = { "author", "MAX(price) AS max_price" };
+        String groupBy = "author";
+        Cursor cursor = db.query("books", columns, null, null, groupBy, null, null);
+        return cursor;
     }
 
 //    public long updateBook(Book book) {

@@ -94,6 +94,7 @@ public class MySqliteHelper extends SQLiteOpenHelper {
         String groupBy = "author";
         Cursor cursor = db.query("books", columns, null, null, groupBy, null, null);
         return cursor;
+        // String title = rs.getString(rs.getColumnIndexOrThrow("title"));
     }
 
 //    public long updateBook(Book book) {

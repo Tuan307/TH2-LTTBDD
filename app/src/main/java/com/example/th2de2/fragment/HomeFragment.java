@@ -35,6 +35,7 @@ public class HomeFragment extends Fragment implements HomeAdapter.onClickItem {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
         return binding.getRoot();
+        //return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     @Override

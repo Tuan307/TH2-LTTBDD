@@ -19,6 +19,12 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add);
+        //setContentView(R.layout.activity_add);
+        /*
+         dataBinding {
+            enabled true
+         }
+         */
         binding.spScope.setAdapter(new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.album)));
         sqliteHelper = new MySqliteHelper(this);
         binding.btnAddNew.setOnClickListener(view -> {
@@ -39,3 +45,30 @@ public class AddActivity extends AppCompatActivity {
         });
     }
 }
+
+/*
+// set date:
+eDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH);
+                int day = c.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(AddActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int y, int m, int d) {
+                        String date = "";
+                        if (m>8) {
+                            date = d + "/" + (m+1) + "/" + y;
+                        } else {
+                            date = d + "/0" + (m+1) + "/" + y;
+                        }
+                        eDate.setText(date);
+                    }
+                }, year, month, day);
+                dialog.show();
+            }
+        });
+ */

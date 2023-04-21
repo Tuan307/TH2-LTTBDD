@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TH2DE2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="type">
+        <item>rock</item>
+        <item>jack</item>
+        <item>pop</item>
+        <item>rap</item>
+    </string-array>
+
+    <string-array name="album">
+        <item>rock1</item>
+        <item>jack1</item>
+        <item>pop1</item>
+        <item>rap1</item>
+    </string-array>
+</resources>

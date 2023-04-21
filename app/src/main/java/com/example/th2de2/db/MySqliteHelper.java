@@ -59,10 +59,20 @@ public class MySqliteHelper extends SQLiteOpenHelper {
         return result;
     }
 
+
+    /*
+            Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM dbs1 WHERE name LIKE '%' || ? || '%'", null);
+//        Cursor cursor = sqLiteDatabase.query("dbs", null, null,
+//                null, null, null, null);
+        String[] selectionArgs = { name};
+        SQLiteDatabase st=getReadableDatabase();
+
+        Cursor rs = st.rawQuery(query, selectionArgs);
+     */
     public List<Book> getAllBook() {
         List<Book> bookList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM dbs1", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM dbs1 ", null);
 //        Cursor cursor = sqLiteDatabase.query("dbs", null, null,
 //                null, null, null, null);
         while (cursor != null && cursor.moveToNext()) {
